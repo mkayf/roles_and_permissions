@@ -1,0 +1,56 @@
+@extends('Pages.Dashboard.Layout.layout')
+
+@section('title', 'Dashboard')
+
+@section('dashboard_content')
+    <div>
+        <h1 class="text-4xl font-bold">Dashboard</h1>
+        <div class="my-6 flex items-center justify-center gap-6">
+            
+            @role('admin|manager')
+            <a href="{{route('users.index')}}">
+            <div class="w-[300px] h-56 rounded-lg shadow-lg bg-blue-500 flex items-center p-8">
+                <div class="flex flex-col gap-4">
+                    <h2 class="font-semibold text-white text-3xl">Users</h2>
+                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                </div>
+            </div>
+            </a>
+            @endrole
+            
+            @role('admin|writer')
+            <a href="{{route('posts.index')}}">
+            <div class="w-[300px] h-56 rounded-lg shadow-lg bg-green-500 flex items-center p-8">
+                <div class="flex flex-col gap-4">
+                    <h2 class="font-semibold text-white text-3xl">Posts</h2>
+                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                </div>
+            </div>
+            </a>
+            @endrole
+
+            @role('admin')
+            <a href="{{route('roles.index')}}">
+            <div class="w-[300px] h-56 rounded-lg shadow-lg bg-yellow-500 flex items-center p-8">
+                <div class="flex flex-col gap-4">
+                    <h2 class="font-semibold text-white text-3xl">Roles</h2>
+                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                </div>
+            </div>
+            </a>
+            @endrole
+
+            @role('admin')
+            <a href="{{route('permissions.index')}}">
+            <div class="w-[300px] h-56 rounded-lg shadow-lg bg-red-500 flex items-center p-8">
+                <div class="flex flex-col gap-4">
+                    <h2 class="font-semibold text-white text-3xl">Permissions</h2>
+                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                </div>
+            </div>
+            </a>
+            @endrole
+
+        </div>
+    </div>
+@endsection

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>@yield('title')</title>
-    @vite('resources/css/app.css');
+    @vite('resources/css/app.css')
 </head>
 <body>
     @include('Components.navbar')

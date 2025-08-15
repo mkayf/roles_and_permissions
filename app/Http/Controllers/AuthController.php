@@ -24,8 +24,6 @@ class AuthController extends Controller
         ]);
 
 
-        // $validatedData = $request->validated();
-
         $user = User::create($validatedData);
 
         $user->assignRole($validatedData['role']);

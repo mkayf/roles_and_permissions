@@ -9,9 +9,14 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function postsForReaders(){
+        return view('pages.posts');
+    }
+
     public function index()
     {
-        //
+        return view('pages.dashboard.posts');
     }
 
     /**
