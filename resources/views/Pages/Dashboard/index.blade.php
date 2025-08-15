@@ -7,7 +7,7 @@
         <h1 class="text-4xl font-bold">Dashboard</h1>
         <div class="my-6 flex items-center justify-center gap-6">
             
-            @role('admin|manager')
+            @can('manage users')
             <a href="{{route('users.index')}}">
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-blue-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
@@ -16,9 +16,9 @@
                 </div>
             </div>
             </a>
-            @endrole
+            @endcan
             
-            @role('admin|writer')
+            @canany(['manage posts', 'create posts', 'delete own posts', 'edit own posts'])
             <a href="{{route('posts.index')}}">
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-green-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             </a>
-            @endrole
+            @endcanany            
 
             @role('admin')
             <a href="{{route('roles.index')}}">

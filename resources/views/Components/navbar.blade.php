@@ -14,12 +14,12 @@
                     <div class="hidden md:flex items-center space-x-1">
                         <a href="/" class="py-4 px-2 text-blue-600  font-semibold">Home</a>
                     </div>
-
-                    @role('admin|writer')
-                        <div class="hidden md:flex items-center space-x-1">
+                    
+                    @can('view dashboard')
+                    <div class="hidden md:flex items-center space-x-1">
                         <a href="{{route('dashboard.index')}}" class="py-4 px-2 text-blue-600  font-semibold">Dashboard</a>
                     </div>
-                    @endrole
+                    @endcan
 
                     @auth
                     <div class="hidden md:flex items-center space-x-1">
