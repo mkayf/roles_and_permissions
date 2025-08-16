@@ -3,8 +3,8 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">LaraAuth</h3>
-                    <p class="text-gray-400">Powerful role-based access control for Laravel applications using Spatie's permission package.</p>
+                    <h3 class="text-xl font-semibold mb-4">Roles and Permissions</h3>
+                    <p class="text-gray-400">Powerful role-based access control for Laravel applications using Spatie's permission package created by kaif.</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>

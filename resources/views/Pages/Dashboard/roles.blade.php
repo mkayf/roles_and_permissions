@@ -5,6 +5,17 @@
 @section('dashboard_content')
 <div>
     <div>
+        @if (session('failed') !== null)
+        <div class="bg-red-200 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+            <p class="font-bold">Oh no</p>
+            <p>{{session('failed')}}</p>
+        </div>
+        @elseif(session('success') !== null)
+        <div class="bg-green-200 border-l-4 border-green-500 text-green-700 p-4" role="alert">
+            <p class="font-bold">Success</p>
+            <p>{{session('success')}}</p>
+        </div>    
+        @endif
         <form action="{{route('roles.store')}}" method="post">
             @csrf
         <h3 class="text-3xl font-semibold">Create new role</h3>
@@ -76,7 +87,11 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <a href="{{route('roles.edit', [$role->id])}}" class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</a>
-                        <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+                        <form action="{{route('roles.delete', $role->id)}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit"  class="text-red-600 hover:text-red-900">Delete</button>
+                        </form>
                     </td>
                  </tr>
                 @endforeach

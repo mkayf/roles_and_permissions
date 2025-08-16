@@ -12,7 +12,7 @@
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-blue-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
                     <h2 class="font-semibold text-white text-3xl">Users</h2>
-                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                    <h2 class="font-semibold text-white text-4xl">{{$total_users ?? 0}}</h2>
                 </div>
             </div>
             </a>
@@ -23,7 +23,7 @@
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-green-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
                     <h2 class="font-semibold text-white text-3xl">Posts</h2>
-                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                    <h2 class="font-semibold text-white text-4xl">{{$total_posts ?? 0}}</h2>
                 </div>
             </div>
             </a>
@@ -34,7 +34,7 @@
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-yellow-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
                     <h2 class="font-semibold text-white text-3xl">Roles</h2>
-                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                    <h2 class="font-semibold text-white text-4xl">{{$total_roles ?? 0}}</h2>
                 </div>
             </div>
             </a>
@@ -45,7 +45,7 @@
             <div class="w-[300px] h-56 rounded-lg shadow-lg bg-red-500 flex items-center p-8">
                 <div class="flex flex-col gap-4">
                     <h2 class="font-semibold text-white text-3xl">Permissions</h2>
-                    <h2 class="font-semibold text-white text-4xl">32</h2>
+                    <h2 class="font-semibold text-white text-4xl">{{$total_permissions ?? 0}}</h2>
                 </div>
             </div>
             </a>

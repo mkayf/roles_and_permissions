@@ -32,11 +32,16 @@ Route::get('/posts', [PostController::class, 'postsForReaders'])->name('posts-re
 
 Route::middleware(['role:admin'])->group(function(){
     Route::get('/dashboard/users', [AdminController::class, 'usersIndex'])->name('users.index');
+    Route::delete('/dashboard/users/{id}/delete', [AdminController::class, 'deleteUser'])->name('users.delete');
     Route::get('/dashboard/roles', [AdminController::class, 'rolesIndex'])->name('roles.index');
     Route::post('/dashboard/roles', [AdminController::class, 'storeRole'])->name('roles.store');
     Route::get('/dashboard/roles/{id}/edit', [AdminController::class, 'editRoleForm'])->name('roles.edit');
     Route::get('/dashboard/permissions', [AdminController::class, 'permissionsIndex'])->name('permissions.index');
     Route::put('/dashboard/roles/{id}', [AdminController::class, 'updateRole'])->name('roles.update');
+    Route::post('/dashboard/roles/assign', [AdminController::class, 'assignRoleToUser'])->name('roles.assign');
+    Route::delete('/dashboard/roles/{id}/delete', [AdminController::class, 'deleteRole'])->name('roles.delete');
+    Route::post('/dashboard/permissions',[AdminController::class, 'storePermission'])->name('permissions.store');
+    Route::delete('/dashboard/permissions/{id}/delete', [AdminController::class, 'deletePermission'])->name('permissions.delete');
 });
 
 // Admin and writer only:
