@@ -11,7 +11,9 @@ class AdminController extends Controller
 {
     public function usersIndex(){
         $users = User::with('roles')->get();
-        return view('pages.dashboard.users', ['users' => $users]);
+        // Fetch roles to assign to users
+        $roles = Role::all()->pluck('name');
+        return view('pages.dashboard.users', ['users' => $users, 'rolesList' => $roles]);
     }   
     public function rolesIndex(){
         $roles = Role::all();
